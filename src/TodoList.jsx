@@ -1,20 +1,23 @@
 import React from 'react';
 import TodoCard from './TodoCard';
 
-const TodoList = () => {
-  const item = [
-    { id: 1, content: 'タスク' },
-    { id: 2, content: 'ダイパする' },
-    { id: 3, content: '宇谷と飲み会' },
-  ];
+const TodoList = ({ todoList }) => {
+  // console.log('親から受け取ったProps', todoList);
 
   return (
     <>
       <h1>Todoリスト</h1>
       <ul>
-        <TodoCard item={item[0]} />
-        <TodoCard item={item[1]} />
-        <TodoCard item={item[2]} />
+        {todoList.map((item) => {
+          // console.log('これはmapで取り出した１つ ：', item);
+          return <TodoCard todo={item} />;
+        })}
+
+        {/* 
+        <TodoCard todo={todoList[0]} />
+        <TodoCard todo={todoList[1]} />
+        <TodoCard todo={todoList[2]} /> 
+        */}
       </ul>
     </>
   );
