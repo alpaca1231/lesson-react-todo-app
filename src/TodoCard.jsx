@@ -1,11 +1,9 @@
 import React from 'react';
 
-const TodoCard = ({ item }) => {
-  console.log(item);
-
+const TodoCard = ({ todo }) => {
   return (
     <li>
-      <span>{item.id}</span>：<span>{item.content}</span>
+      <span>{todo.id}</span>：<span>{todo.content}</span>
     </li>
   );
 };
