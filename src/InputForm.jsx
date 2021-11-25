@@ -8,7 +8,13 @@ const InputForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(value);
+    if (value) {
+      addTodo(value);
+      setValue('');
+    } else {
+      alert('文字を入力してください');
+      return;
+    }
   };
 
   return (
