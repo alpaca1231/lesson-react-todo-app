@@ -10,7 +10,7 @@ const TodoList = ({ todoList }) => {
       <ul>
         {todoList.map((item) => {
           // console.log('これはmapで取り出した１つ ：', item);
-          return <TodoCard todo={item} />;
+          return <TodoCard key={item.id} todo={item} />;
         })}
 
         {/* 
