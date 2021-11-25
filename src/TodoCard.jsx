@@ -1,9 +1,10 @@
 import React from 'react';
 
-const TodoCard = ({ todo }) => {
+const TodoCard = ({ todo, removeTodo }) => {
   return (
     <li>
-      <span>{todo.id}</span>：<span>{todo.content}</span>
+      <button onClick={() => removeTodo(todo.id)}>削除</button>
+      <span>{todo.content}</span>
     </li>
   );
 };

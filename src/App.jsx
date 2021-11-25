@@ -21,12 +21,22 @@ function App() {
     setTodoList([...todoList, { id: newId(), content: value }]);
   };
 
+  const removeTodo = (id) => {
+    const newTodoList = todoList.filter((item) => {
+      if (id === item.id) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    setTodoList(newTodoList);
+  };
+
   return (
     <div className="App">
       <h1>はろーわーるど</h1>
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} removeTodo={removeTodo} />
       <InputForm addTodo={addTodo} />
-
       {/* <Count /> */}
     </div>
   );
